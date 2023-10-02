@@ -1,18 +1,16 @@
 <html>
 	<head></head>
 	<body>
-		Hey and welcome
+		Hello there
 	</body>
 	<script>
 		let ws;
 		// websocket protocol is different if we are on https or http
-		const proto = window.location.protocol === "https:" ? "wss" : "ws";
-
-		// websocket is built in
 		try {
+			const proto = window.location.protocol === "https:" ? "wss" : "ws";
 			ws = new WebSocket(`${proto}://${window.location.host}`);
 		} catch (e) {
-			//
+			console.log(e);
 		}
 		ws.onmessage = (event) => {
 			console.log(event.data);

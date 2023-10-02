@@ -18,8 +18,6 @@ server.listen(PORT, function () {
 	console.log("Listening on " + PORT);
 });
 
-/** End Server **/
-
 /** Start Websocket **/
 
 // use ws package to create websocket server
@@ -47,7 +45,7 @@ wss.on("connection", function connection(ws) {
 	});
 
 	ws.on("error", function error() {
-		//
+		console.log("There's been an error");
 	});
 });
 
