@@ -6,11 +6,11 @@
 	<script>
 		let ws;
 		// websocket protocol is different if we are on https or http
-		const protocol = window.location.protocol === "https:" ? "wss" : "ws";
+		const proto = window.location.protocol === "https:" ? "wss" : "ws";
 
 		// websocket is built in
 		try {
-			ws = new WebSocket(`${protocol}://${window.location.host}`);
+			ws = new WebSocket(`${proto}://${window.location.host}`);
 		} catch (e) {
 			//
 		}
